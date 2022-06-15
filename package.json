@@ -3,10 +3,14 @@
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
+        "development:ssr": "",
         "watch": "mix watch",
+        "watch:ssr": "mix --mix-config=webpack.ssr.mix.js watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
+        "prod:ssr": "mix --production && mix --production --mix-config=webpack.ssr.mix.js",
+        "serve:ssr": "node public/js/ssr.js",
         "production": "mix --production"
     },
     "devDependencies": {
@@ -15,6 +19,7 @@
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-react": "^0.8.0",
         "@inertiajs/progress": "^0.2.6",
+        "@inertiajs/server": "^0.1.0",
         "@tailwindcss/forms": "^0.4.0",
         "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
@@ -24,6 +29,10 @@
         "postcss": "^8.4.6",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "tailwindcss": "^3.0.18"
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.52.3",
+        "sass-loader": "^12.6.0",
+        "tailwindcss": "^3.0.18",
+        "webpack-node-externals": "^3.0.0"
     }
 }
